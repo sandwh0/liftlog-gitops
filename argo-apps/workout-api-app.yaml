@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: workout-apo
+  namespace: liftlog-argo
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+    name: guestbook
+spec:
+  # The project the application belongs to.
+  project: default
+  source:
+    repoURL: https://github.com/sandwh0/liftlog-apps.git
+    targetRevision: main  
+    path: apps/workout-api 
+    
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: liftlog-argo
+
+  syncPolicy:
+    automated: {}

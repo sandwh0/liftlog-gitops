@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: workout-api
+  namespace: apps
+  labels:
+    app: workout-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: workout-api
+  template:
+    metadata:
+      labels:
+        app: workout-api
+    spec:
+      containers:
+      - name: workout-api
+        image: sandwho2/workout-api:v0.0.2-alpine
+        ports:
+        - containerPort: 8080
