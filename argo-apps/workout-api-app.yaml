@@ -15,7 +15,7 @@ spec:
     
   destination:
     server: https://kubernetes.default.svc
-    namespace: liftlog-argo
+    namespace: liftlog-apps
 
   syncPolicy:
     automated: {}
