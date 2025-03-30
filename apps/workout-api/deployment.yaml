@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: workout-api
-  namespace: liftlogapps
+  namespace: liftlog-apps
   labels:
     app: workout-api
 spec:
